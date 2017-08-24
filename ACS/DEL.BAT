@@ -1,0 +1,2 @@
+CD\ACS\BACKUP
+DEL *.DMP
