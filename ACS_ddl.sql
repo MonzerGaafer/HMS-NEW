@@ -32,6 +32,9 @@ USING INDEX
 
 /
 
+alter table actors add actor_c_sts varchar2(10) default 'Active';
+
+/
 
 -- End of DDL Script for Table ACS.ACTORS
 
@@ -62,6 +65,10 @@ USING INDEX
 ALTER TABLE categories
 ADD CONSTRAINT unq_categories UNIQUE (category_i_id)
 USING INDEX
+
+/
+
+alter table categories add category_c_sts varchar2(10) default 'Active';
 
 /
 
@@ -98,6 +105,8 @@ USING INDEX
 
 /
 
+Alter table classifications add class_c_sts varchar2(10) default 'Active';
+/
 
 -- End of DDL Script for Table ACS.CLASSIFICATIONS
 
@@ -232,6 +241,10 @@ USING INDEX
   PCTFREE     10
   INITRANS    2
   MAXTRANS    255
+/
+
+alter table PRODUCTS add PRODUCTS_c_sts varchar2(10)  default 'Active'
+
 /
 
 
