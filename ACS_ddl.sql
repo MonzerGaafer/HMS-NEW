@@ -429,3 +429,20 @@ CREATE SEQUENCE SEQ_orders_id
  CACHE 5
 /
 
+
+CREATE TABLE cnt_mast
+    (cnt_c_code                     VARCHAR2(20) NOT NULL,
+    cnt_c_desc                     VARCHAR2(100) NOT NULL,
+    cnt_i_no                       NUMBER(20,0) NOT NULL)
+  PARALLEL (DEGREE DEFAULT)
+  LOGGING
+  MONITORING
+/
+
+
+-- Constraints for CNT_MAST
+
+ALTER TABLE cnt_mast
+ADD CONSTRAINT pk_cnt_mast PRIMARY KEY (cnt_c_code)
+USING INDEX
+/
