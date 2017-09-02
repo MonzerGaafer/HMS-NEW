@@ -446,3 +446,69 @@ ALTER TABLE cnt_mast
 ADD CONSTRAINT pk_cnt_mast PRIMARY KEY (cnt_c_code)
 USING INDEX
 /
+
+
+alter table products add product_c_code  varchar2(20); 
+/
+alter table products add CONSTRAINT UN_product_c_code UNIQUE  (product_c_code);
+/
+
+INSERT INTO cnt_mast (CNT_C_CODE,CNT_C_DESC,CNT_I_NO)
+VALUES('productID','Product ID',0);
+/
+
+
+create table login ( user_name    varchar2(10) PRIMARY key, user_type varchar2(10) ,user_password varchar2(10));
+/
+
+alter table products add product_c_code  varchar2(20); 
+/
+alter table products add CONSTRAINT UN_product_c_code UNIQUE  (product_c_code)
+/
+
+INSERT INTO cnt_mast (CNT_C_CODE,CNT_C_DESC,CNT_I_NO)
+VALUES('CLASSID','CLASS ID',0);
+/
+
+INSERT INTO cnt_mast (CNT_C_CODE,CNT_C_DESC,CNT_I_NO)
+VALUES('CATEGORYID','CATEGORY ID',0);
+/
+
+INSERT INTO cnt_mast (CNT_C_CODE,CNT_C_DESC,CNT_I_NO)
+VALUES('PRODUCTID','PRODUCT ID',0);
+/
+
+
+
+CREATE TABLE user_messages
+    (msg_c_id                       VARCHAR2(10) NOT NULL,
+    msg_c_desc                     VARCHAR2(250),
+    msg_c_severity                 CHAR(1),
+    msg_c_foreign                  VARCHAR2(300))
+  PARALLEL (DEGREE DEFAULT)
+  LOGGING
+  MONITORING
+/
+
+
+-- Constraints for USER_MESSAGES
+
+ALTER TABLE user_messages
+ADD CONSTRAINT pk_user_messages PRIMARY KEY (msg_c_id)
+USING INDEX
+/
+
+INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
+VALUES('DL-0002','Are you sure to delete this record','Q','Â· «‰  „ «ﬂœ „‰ «‰ﬂ  —Ìœ Õ–› «·”Ã·');
+INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
+VALUES('UP-0004','Record updated Successfully','I',' „  «·⁄„·Ì… »‰Ã«Õ ');
+/
+INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
+VALUES('UP-0005','Updation of Records failed','S','›‘·  «·⁄„·Ì…');
+/
+INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
+VALUES('UP-0001','Updation of Control Master Failed','S','›‘·  «·⁄„·Ì…');
+INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
+VALUES('SL-0006','Selection of Control Number Failed','S','›‘· «·«Œ Ì«— ··—ﬁ„');
+/
+
