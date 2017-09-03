@@ -604,3 +604,53 @@ VALUES('IF-0017','›‘· ≈” ⁄«œ… «·”⁄— «·√’·Ì ··Œœ„…','S','failed to retrive servic
 /
 drop table contract_prices;
 /
+
+
+CREATE TABLE dictmast
+    (dict_c_repid                   VARCHAR2(9) NOT NULL,
+    dict_c_type                    VARCHAR2(1) NOT NULL,
+    dict_c_title                   VARCHAR2(100) NOT NULL,
+    dict_c_table                   VARCHAR2(100),
+    dict_c_colm                    VARCHAR2(30),
+    dict_c_ftype                   VARCHAR2(1),
+    dict_i_flen                    FLOAT(126),
+    dict_i_fdec                    FLOAT(126),
+    dict_c_case                    VARCHAR2(1),
+    dict_c_orientation             VARCHAR2(1),
+    dict_c_sortorder               VARCHAR2(2))
+  PARALLEL (DEGREE DEFAULT)
+  LOGGING
+  MONITORING
+/
+
+
+-- Constraints for DICTMAST
+
+ALTER TABLE dictmast
+ADD CONSTRAINT pk_dictmast PRIMARY KEY (dict_c_repid, dict_c_type, dict_c_title)
+USING INDEX
+/
+
+CREATE TABLE dictdetl
+    (detl_c_repid                   VARCHAR2(8) NOT NULL,
+    detl_c_colm                    VARCHAR2(30) NOT NULL,
+    detl_c_disp                    VARCHAR2(30) NOT NULL,
+    detl_c_filt                    VARCHAR2(30) NOT NULL)
+  PARALLEL (DEGREE DEFAULT)
+  LOGGING
+  MONITORING
+/
+
+
+-- Constraints for DICTDETL
+
+ALTER TABLE dictdetl
+ADD CONSTRAINT pk_dictdetl PRIMARY KEY (detl_c_repid, detl_c_colm, detl_c_disp)
+USING INDEX
+/
+
+
+INSERT INTO dictmast (DICT_C_REPID,DICT_C_TYPE,DICT_C_TITLE,DICT_C_TABLE,DICT_C_COLM,DICT_C_FTYPE,DICT_I_FLEN,DICT_I_FDEC,DICT_C_CASE,DICT_C_ORIENTATION,DICT_C_SORTORDER)
+VALUES('GM REP04','R','Product Master','dw_producttabularreport',NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO dictmast (DICT_C_REPID,DICT_C_TYPE,DICT_C_TITLE,DICT_C_TABLE,DICT_C_COLM,DICT_C_FTYPE,DICT_I_FLEN,DICT_I_FDEC,DICT_C_CASE,DICT_C_ORIENTATION,DICT_C_SORTORDER)
+VALUES('GM REP04','F','Product Code','products','Product_c_code','C',20,NULL,'U',NULL,NULL);
