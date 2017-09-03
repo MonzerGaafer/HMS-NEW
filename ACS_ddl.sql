@@ -512,3 +512,95 @@ INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
 VALUES('SL-0006','Selection of Control Number Failed','S','›‘· «·«Œ Ì«— ··—ﬁ„');
 /
 
+
+CREATE TABLE bill_issue
+    (systemid                       NUMBER NOT NULL,
+    customer_id                    NUMBER NOT NULL,
+    contractor_id                  NUMBER NOT NULL,
+    card_id                        VARCHAR2(20),
+    card_issue_date                DATE,
+    card_expire_date               DATE,
+    total_paid_amount              NUMBER(12,2) NOT NULL,
+    bill_status                    VARCHAR2(10),
+    entry_date                     DATE,
+    enter_by                       VARCHAR2(10))
+  NOPARALLEL
+  LOGGING
+  MONITORING
+/
+
+CREATE TABLE bill_issue_detail
+    (systemid                       NUMBER NOT NULL,
+    product_id                     NUMBER NOT NULL,
+    quantity                       NUMBER NOT NULL,
+    product_price                  NUMBER(12,2) NOT NULL,
+    contract_price                 NUMBER(12,2) NOT NULL,
+    diffrent_amount                NUMBER(12,2) NOT NULL,
+    deduct_amount                  NUMBER(12,2) NOT NULL,
+    paid_amount                    NUMBER(12,2) NOT NULL)
+  NOPARALLEL
+  LOGGING
+  MONITORING
+/
+
+CREATE TABLE contract
+    (systemid                       NUMBER NOT NULL,
+    contractor_id                  NUMBER NOT NULL,
+    startdate                      DATE,
+    enddate                        DATE,
+    contract_status                VARCHAR2(10),
+    enry_date                      DATE,
+    enter_by                       VARCHAR2(10))
+  NOPARALLEL
+  LOGGING
+  MONITORING
+/
+
+ALTER TABLE contract
+ADD CONSTRAINT pk_contracts PRIMARY KEY (contractor_id)
+USING INDEX
+/
+
+CREATE TABLE contract_detail
+    (systemid                       NUMBER NOT NULL,
+    contract_id                    NUMBER NOT NULL,
+    product_id                     NUMBER NOT NULL,
+    product_price_limit            NUMBER(12,2) NOT NULL,
+    deduct_type                    VARCHAR2(10),
+    deduct_value                   NUMBER(12,2) NOT NULL,
+    entry_date                     DATE,
+    enter_by                       VARCHAR2(10))
+  NOPARALLEL
+  LOGGING
+  MONITORING
+/
+
+ALTER TABLE contract_detail
+ADD CONSTRAINT pk_con_det PRIMARY KEY (systemid, contract_id, product_id)
+USING INDEX
+/
+
+ALTER TABLE contract_detail
+ADD CONSTRAINT uk_contract_detail UNIQUE (contract_id, product_id)
+USING INDEX
+/
+
+CREATE TABLE system_flag
+    (flag_code                      VARCHAR2(10) NOT NULL,
+    flag_desc                      VARCHAR2(50) NOT NULL,
+    flag_value                     VARCHAR2(10) NOT NULL)
+  NOPARALLEL
+  LOGGING
+  MONITORING
+/
+
+ALTER TABLE system_flag
+ADD CONSTRAINT pk_system_flag PRIMARY KEY (flag_code)
+USING INDEX
+/
+
+INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
+VALUES('IF-0017','›‘· ≈” ⁄«œ… «·”⁄— «·√’·Ì ··Œœ„…','S','failed to retrive service price');
+/
+drop table contract_prices;
+/
