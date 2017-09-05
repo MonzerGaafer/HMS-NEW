@@ -1,4 +1,4 @@
--- Start of DDL Script for Table ACS.ACTORS
+Ôªø-- Start of DDL Script for Table ACS.ACTORS
 -- Generated 26-Aug-2017 15:39:39 from ACS@AbdoPc
 
 CREATE TABLE actors
@@ -499,17 +499,17 @@ USING INDEX
 /
 
 INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
-VALUES('DL-0002','Are you sure to delete this record','Q','Â· «‰  „ «ﬂœ „‰ «‰ﬂ  —Ìœ Õ–› «·”Ã·');
+VALUES('DL-0002','Are you sure to delete this record','Q','ŸáŸÑ ÿßŸÜÿ™ ŸÖÿ™ÿßŸÉÿØ ŸÖŸÜ ÿßŸÜŸÉ ÿ™ÿ±ŸäÿØ ÿ≠ÿ∞ŸÅ ÿßŸÑÿ≥ÿ¨ŸÑ');
 INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
-VALUES('UP-0004','Record updated Successfully','I',' „  «·⁄„·Ì… »‰Ã«Õ ');
+VALUES('UP-0004','Record updated Successfully','I','ÿ™ŸÖÿ™ ÿßŸÑÿπŸÖŸÑŸäÿ© ÿ®ŸÜÿ¨ÿßÿ≠ ');
 /
 INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
-VALUES('UP-0005','Updation of Records failed','S','›‘·  «·⁄„·Ì…');
+VALUES('UP-0005','Updation of Records failed','S','ŸÅÿ¥ŸÑÿ™ ÿßŸÑÿπŸÖŸÑŸäÿ©');
 /
 INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
-VALUES('UP-0001','Updation of Control Master Failed','S','›‘·  «·⁄„·Ì…');
+VALUES('UP-0001','Updation of Control Master Failed','S','ŸÅÿ¥ŸÑÿ™ ÿßŸÑÿπŸÖŸÑŸäÿ©');
 INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
-VALUES('SL-0006','Selection of Control Number Failed','S','›‘· «·«Œ Ì«— ··—ﬁ„');
+VALUES('SL-0006','Selection of Control Number Failed','S','ŸÅÿ¥ŸÑ ÿßŸÑÿßÿÆÿ™Ÿäÿßÿ± ŸÑŸÑÿ±ŸÇŸÖ');
 /
 
 
@@ -600,7 +600,7 @@ USING INDEX
 /
 
 INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
-VALUES('IF-0017','›‘· ≈” ⁄«œ… «·”⁄— «·√’·Ì ··Œœ„…','S','failed to retrive service price');
+VALUES('IF-0017','ŸÅÿ¥ŸÑ ÿ•ÿ≥ÿ™ÿπÿßÿØÿ© ÿßŸÑÿ≥ÿπÿ± ÿßŸÑÿ£ÿµŸÑŸä ŸÑŸÑÿÆÿØŸÖÿ©','S','failed to retrive service price');
 /
 drop table contract_prices;
 /
@@ -654,3 +654,92 @@ INSERT INTO dictmast (DICT_C_REPID,DICT_C_TYPE,DICT_C_TITLE,DICT_C_TABLE,DICT_C_
 VALUES('GM REP04','R','Product Master','dw_producttabularreport',NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 INSERT INTO dictmast (DICT_C_REPID,DICT_C_TYPE,DICT_C_TITLE,DICT_C_TABLE,DICT_C_COLM,DICT_C_FTYPE,DICT_I_FLEN,DICT_I_FDEC,DICT_C_CASE,DICT_C_ORIENTATION,DICT_C_SORTORDER)
 VALUES('GM REP04','F','Product Code','products','Product_c_code','C',20,NULL,'U',NULL,NULL);
+
+
+
+
+INSERT INTO dictmast (DICT_C_REPID,DICT_C_TYPE,DICT_C_TITLE,DICT_C_TABLE,DICT_C_COLM,DICT_C_FTYPE,DICT_I_FLEN,DICT_I_FDEC,DICT_C_CASE,DICT_C_ORIENTATION,DICT_C_SORTORDER)
+VALUES('GM REP05','R','Service/Product Classifications','dw_classification_report',NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO dictmast (DICT_C_REPID,DICT_C_TYPE,DICT_C_TITLE,DICT_C_TABLE,DICT_C_COLM,DICT_C_FTYPE,DICT_I_FLEN,DICT_I_FDEC,DICT_C_CASE,DICT_C_ORIENTATION,DICT_C_SORTORDER)
+VALUES('GM REP05','F','Classfication ID','classifications','class_i_id','N',10,NULL,'U',NULL,NULL);
+INSERT INTO dictmast (DICT_C_REPID,DICT_C_TYPE,DICT_C_TITLE,DICT_C_TABLE,DICT_C_COLM,DICT_C_FTYPE,DICT_I_FLEN,DICT_I_FDEC,DICT_C_CASE,DICT_C_ORIENTATION,DICT_C_SORTORDER)
+VALUES('GM REP05','F','Class Description','classifications','class_c_desc','C',10,NULL,'U',NULL,NULL);
+INSERT INTO dictmast (DICT_C_REPID,DICT_C_TYPE,DICT_C_TITLE,DICT_C_TABLE,DICT_C_COLM,DICT_C_FTYPE,DICT_I_FLEN,DICT_I_FDEC,DICT_C_CASE,DICT_C_ORIENTATION,DICT_C_SORTORDER)
+VALUES('GM REP05','F','Classfication Status','classifications','class_c_sts','C',10,NULL,'U',NULL,NULL);
+INSERT INTO dictmast (DICT_C_REPID,DICT_C_TYPE,DICT_C_TITLE,DICT_C_TABLE,DICT_C_COLM,DICT_C_FTYPE,DICT_I_FLEN,DICT_I_FDEC,DICT_C_CASE,DICT_C_ORIENTATION,DICT_C_SORTORDER)
+VALUES('GM REP05','F','Entered By','classifications','entered_c_by','C',10,NULL,'U',NULL,NULL);
+INSERT INTO dictmast (DICT_C_REPID,DICT_C_TYPE,DICT_C_TITLE,DICT_C_TABLE,DICT_C_COLM,DICT_C_FTYPE,DICT_I_FLEN,DICT_I_FDEC,DICT_C_CASE,DICT_C_ORIENTATION,DICT_C_SORTORDER)
+VALUES('GM REP05','F','Entered Date','classifications','entry_d_date','D',10,NULL,'U',NULL,NULL);
+
+INSERT INTO dictmast (DICT_C_REPID,DICT_C_TYPE,DICT_C_TITLE,DICT_C_TABLE,DICT_C_COLM,DICT_C_FTYPE,DICT_I_FLEN,DICT_I_FDEC,DICT_C_CASE,DICT_C_ORIENTATION,DICT_C_SORTORDER)
+VALUES('GM REP06','R','Service/Product Units','dw_unit_report',NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO dictmast (DICT_C_REPID,DICT_C_TYPE,DICT_C_TITLE,DICT_C_TABLE,DICT_C_COLM,DICT_C_FTYPE,DICT_I_FLEN,DICT_I_FDEC,DICT_C_CASE,DICT_C_ORIENTATION,DICT_C_SORTORDER)
+VALUES('GM REP06','F','Classfication ID','units','unit_i_id','N',10,NULL,'U',NULL,NULL);
+INSERT INTO dictmast (DICT_C_REPID,DICT_C_TYPE,DICT_C_TITLE,DICT_C_TABLE,DICT_C_COLM,DICT_C_FTYPE,DICT_I_FLEN,DICT_I_FDEC,DICT_C_CASE,DICT_C_ORIENTATION,DICT_C_SORTORDER)
+VALUES('GM REP06','F','Class Description','units','unit_c_desc','C',10,NULL,'U',NULL,NULL);
+INSERT INTO dictmast (DICT_C_REPID,DICT_C_TYPE,DICT_C_TITLE,DICT_C_TABLE,DICT_C_COLM,DICT_C_FTYPE,DICT_I_FLEN,DICT_I_FDEC,DICT_C_CASE,DICT_C_ORIENTATION,DICT_C_SORTORDER)
+VALUES('GM REP06','F','Entered By','units','entered_c_by','C',10,NULL,'U',NULL,NULL);
+INSERT INTO dictmast (DICT_C_REPID,DICT_C_TYPE,DICT_C_TITLE,DICT_C_TABLE,DICT_C_COLM,DICT_C_FTYPE,DICT_I_FLEN,DICT_I_FDEC,DICT_C_CASE,DICT_C_ORIENTATION,DICT_C_SORTORDER)
+VALUES('GM REP06','F','Entered Date','units','entry_d_date','D',10,NULL,'U',NULL,NULL);
+
+
+INSERT INTO dictmast (DICT_C_REPID,DICT_C_TYPE,DICT_C_TITLE,DICT_C_TABLE,DICT_C_COLM,DICT_C_FTYPE,DICT_I_FLEN,DICT_I_FDEC,DICT_C_CASE,DICT_C_ORIENTATION,DICT_C_SORTORDER)
+VALUES('GM REP07','R','Service/Product Prices','dw_product_price_report',NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO dictmast (DICT_C_REPID,DICT_C_TYPE,DICT_C_TITLE,DICT_C_TABLE,DICT_C_COLM,DICT_C_FTYPE,DICT_I_FLEN,DICT_I_FDEC,DICT_C_CASE,DICT_C_ORIENTATION,DICT_C_SORTORDER)
+VALUES('GM REP07','F','Product ID','products_prices','product_i_id','N',10,NULL,'U',NULL,NULL);
+INSERT INTO dictmast (DICT_C_REPID,DICT_C_TYPE,DICT_C_TITLE,DICT_C_TABLE,DICT_C_COLM,DICT_C_FTYPE,DICT_I_FLEN,DICT_I_FDEC,DICT_C_CASE,DICT_C_ORIENTATION,DICT_C_SORTORDER)
+VALUES('GM REP07','F','Product Price','products_prices','product_i_price','N',10,NULL,'U',NULL,NULL);
+INSERT INTO dictmast (DICT_C_REPID,DICT_C_TYPE,DICT_C_TITLE,DICT_C_TABLE,DICT_C_COLM,DICT_C_FTYPE,DICT_I_FLEN,DICT_I_FDEC,DICT_C_CASE,DICT_C_ORIENTATION,DICT_C_SORTORDER)
+VALUES('GM REP07','F','Entered By','products_prices','entered_c_by','C',10,NULL,'C',NULL,NULL);
+INSERT INTO dictmast (DICT_C_REPID,DICT_C_TYPE,DICT_C_TITLE,DICT_C_TABLE,DICT_C_COLM,DICT_C_FTYPE,DICT_I_FLEN,DICT_I_FDEC,DICT_C_CASE,DICT_C_ORIENTATION,DICT_C_SORTORDER)
+VALUES('GM REP07','F','Entered Date','products_prices','entry_d_date','D',10,NULL,'U',NULL,NULL);
+
+
+
+
+-- Start of DDL Script for Table HMS.PRODUCTS_PRICESE
+-- Generated 05/09/2017 12:18:09 √ï from HMS@
+drop table products_pricese
+/
+
+CREATE TABLE products_prices
+    (systemid                       NUMBER(32,0) ,
+    product_i_id                   NUMBER(16,0),
+    product_i_price                NUMBER(10,0),
+    entry_d_date                   DATE,
+    entered_c_by                   VARCHAR2(10))
+  NOPARALLEL
+  LOGGING
+  MONITORING
+/
+
+
+-- Constraints for PRODUCTS_PRICESE
+
+ALTER TABLE products_prices
+ADD CONSTRAINT pk_products_prices PRIMARY KEY (systemid)
+USING INDEX
+/
+
+alter table products_prices
+add CONSTRAINT fk_productID FOREIGN key (product_i_id) REFERENCES products(systemid)
+/
+
+ALTER TABLE products_prices
+ADD CONSTRAINT unq_products_prices UNIQUE (product_i_id, product_i_price, 
+  entry_d_date)
+USING INDEX
+/
+
+ALTER TABLE products_prices
+ADD CONSTRAINT uk_products_date UNIQUE (product_i_id, entry_d_date)
+USING INDEX
+/
+
+alter table products_prices modify product_i_price NUMBER(10,2);
+/
+
+-- End of DDL Script for Table HMS.PRODUCTS_PRICESE
+
+select a. from products a, products_prices b
+where a.systemid = b.product_i_id
