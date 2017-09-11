@@ -925,4 +925,32 @@ alter table products add Max_i_Quantity  Number(10) default 0;
 
 --
 select a. from products a, products_prices b
-where a.systemid = b.product_i_id
+where a.systemid = b.product_i_id;
+
+
+/*
+
+--//--//--//--//---/-/-/-/-/
+/*
+
+
+ALTER TABLE IN_OUT_ORDERSDETAILS 
+ ADD (
+  current_c_sts VARCHAR2 (20),
+  current_i_amount NUMBER (32)
+ )
+/
+INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
+VALUES('OR-0001','حدث خطأ أثناء تحديث الطلبية','S','Error During Updating The Order');
+INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
+VALUES('OR-0002','خطأ في إستجلاب الطلبية الجديدة','S','Error During Fetching The New Order');
+INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
+VALUES('OR-0003','خطأ في إستجلاب كمية الطلبية الجديدة','S','Error During Fetching The New Order Quantity');
+INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
+VALUES('ST-0002','المخزون أقل من القيمة الخارجة','S','The Stock Is Less Than The Wanted Quantity');
+INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
+VALUES('ST-0003','حدث خطأ أثناء تحديث المخزون','S','Error During Updating The Stock');
+INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
+VALUES('ST-0005','خطأ في المحزون','S','Error In The Stock');
+INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
+VALUES('ST-0101','لا يوجد مخزون متاح','S','The Stock IS Empty');
