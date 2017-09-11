@@ -773,5 +773,156 @@ VALUES('GM REP08','F','Entered Date','contract','enry_date','D',10,NULL,'U',NULL
 
 -- End of DDL Script for Table HMS.PRODUCTS_PRICESE
 
+-- permissions tables
+CREATE TABLE Modules
+    (systemid                       NUMBER(32,0) ,
+    Module_c_Name                  VARCHAR2(10),
+    Module_c_desc                VARCHAR2(50),
+    Module_c_sts		 VARCHAR2(10) default 'Active',
+    entry_d_date                   DATE,
+    entered_c_by                   VARCHAR2(10))
+
+/
+
+
+
+
+
+-- Constraints for Modules
+
+ALTER TABLE Modules
+ADD CONSTRAINT pk_Modules PRIMARY KEY (systemid)
+USING INDEX
+
+/
+
+ALTER TABLE Modules
+ADD CONSTRAINT unq_Module_c_Name UNIQUE (Module_c_Name)
+USING INDEX
+
+/
+
+
+CREATE TABLE Module_Menus
+    (systemid                       NUMBER(32,0) ,
+    Module_i_id                  NUMBER(32,0) ,
+    Menu_c_name                VARCHAR2(10),
+    Menu_i_order		Number(2),
+    SubMenu_i_order		Number(2),
+    SubSubMenu_i_order		Number(2),
+    Menu_c_sts		 VARCHAR2(10) default 'Active',
+    entry_d_date                   DATE,
+    entered_c_by                   VARCHAR2(10))
+
+/
+
+
+
+
+
+-- Constraints for Module_Menus
+
+ALTER TABLE Module_Menus
+ADD CONSTRAINT pk_Module_Menus PRIMARY KEY (systemid)
+USING INDEX
+
+/
+
+
+alter table Module_Menus
+add CONSTRAINT fk_Module_i_id FOREIGN key (Module_i_id) REFERENCES Modules(systemid)
+/
+ALTER TABLE Module_Menus
+ADD CONSTRAINT unq_ModulesMenus_order UNIQUE (Module_i_order,SubMenu_i_order,SubSubMenu_i_order)
+USING INDEX
+
+/
+
+CREATE TABLE Users_Menus_Permissions
+    (systemid                       NUMBER(32,0) ,
+    user_i_id                  NUMBER(32,0) ,
+    Menu_i_id			NUMBER(32,0),
+    Permissions_c_sts		 VARCHAR2(10) default 'Active',
+    entry_d_date                   DATE,
+    entered_c_by                   VARCHAR2(10))
+
+/
+
+
+
+
+
+-- Constraints for Users_Menus_Permissions
+
+ALTER TABLE Users_Menus_Permissions
+ADD CONSTRAINT pk_Users_Menus_Permissions PRIMARY KEY (systemid)
+USING INDEX
+
+/
+
+
+alter table Users_Menus_Permissions
+add CONSTRAINT fk_Users_Menus_userid FOREIGN key (user_i_id) REFERENCES users(systemid)
+/
+
+alter table Users_Menus_Permissions
+add CONSTRAINT fk_Users_Menus_Menuid FOREIGN key (Menu_i_id) REFERENCES Module_Menus(systemid)
+/
+
+ALTER TABLE Users_Menus_Permissions
+ADD CONSTRAINT unq_ModulesMenus_UserMenu UNIQUE (User_i_id,Menu_i_id)
+USING INDEX
+
+/
+
+-- End of DDL Script for Table Users_Menus_Permissions
+
+CREATE TABLE profile
+    (id                             VARCHAR2(1) NOT NULL,
+    name                           VARCHAR2(50) NOT NULL,
+    comments                       VARCHAR2(30),
+    address                        VARCHAR2(30),
+    phone                          VARCHAR2(30),
+    english_name                   VARCHAR2(40))
+  NOPARALLEL
+  LOGGING
+  MONITORING
+/
+
+
+-- Constraints for PROFILE
+
+ALTER TABLE profile
+ADD PRIMARY KEY (id, name)
+USING INDEX
+/
+
+
+
+
+
+create table users_permissions(
+Login_name   Varchar2(20) ,
+Application  Varchar2(20) ,
+Item_type   Varchar2(10) ,
+Item_name   Varchar2(20) ,
+Priviledge  char(1) -- NULL = no permission,R=read only,I=Invisible,W=read/write
+)
+/
+
+alter table users_permissions add PRIMARY key ( Login_name,Application,Item_type,Item_name)
+/
+
+alter table products add Min_i_Quantity  Number(10) default 0; 
+/
+
+alter table products modify  Min_i_Quantity default 0; 
+/
+
+
+alter table products add Max_i_Quantity  Number(10) default 0; 
+/
+
+--
 select a. from products a, products_prices b
 where a.systemid = b.product_i_id
