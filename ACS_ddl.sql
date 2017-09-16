@@ -1044,3 +1044,17 @@ VALUES('ST-0090','تحذير ، المخزون تعدى الحد الأدنى','
 INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
 VALUES('ST-0091','تحذير ، المخزون سيتعدى الحد الأدنى بعد إكمال هذه العملية','S','Warrning , The Stock Will Exceed It''s  Minimum Amount After This Transaction');
 >>>>>>> e770225625bdd710f14e599f78670929497fd0df
+INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
+VALUES('ST-0001','خطأ في إسترجاع المخزون','I','Error While Retrieving The Stock');
+INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
+VALUES('ST-0009','خطأ أثناء إسترجاع أقل  قيمة للمخزون','I','Error While Retrieving The Minimum Stock Amount');
+INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
+VALUES('ST-0090','تحذير ، المخزون تعدى الحد الأدنى','S','Warrning , The Stock Exceeded It''s  Minimum Amount');
+INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
+VALUES('ST-0091','تحذير ، المخزون سيتعدى الحد الأدنى بعد إكمال هذه العملية','S','Warrning , The Stock Will Exceed It''s  Minimum Amount After This Transaction');
+INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
+VALUES('ST-0092','تحذير ، سيتم إستهلاك المخزون كاملا ','I','Warrning, The Stock Will Be Fully Consumed ');
+INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
+VALUES('OR-0004','خطأ في إستجلاب تاريخ إنتاج/إنتهاء الطلبية ','I','Error During Fetching The Order Manufacturing/Expiring Date ');
+INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
+VALUES('OR-0006','المخزون غير كافي لإكمال العملية','S','The Stock Is Not Enough To Complete The Order ');
