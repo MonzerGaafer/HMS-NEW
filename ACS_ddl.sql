@@ -1000,3 +1000,11 @@ ALTER TABLE SYSTEM_MENUS
 ADD CONSTRAINT uk_MENU_C_TEXT UNIQUE (MENU_C_TEXT)
 USING INDEX
 /
+INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
+VALUES('ST-0001','خطأ في إسترجاع المخزون','I','Error While Retrieving The Stock');
+INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
+VALUES('ST-0009','خطأ أثناء إسترجاع أقل  قيمة للمخزون','I','Error While Retrieving The Minimum Stock Amount');
+INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
+VALUES('ST-0090','تحذير ، المخزون تعدى الحد الأدنى','S','Warrning , The Stock Exceeded It''s  Minimum Amount');
+INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
+VALUES('ST-0091','تحذير ، المخزون سيتعدى الحد الأدنى بعد إكمال هذه العملية','S','Warrning , The Stock Will Exceed It''s  Minimum Amount After This Transaction');
