@@ -1058,3 +1058,13 @@ INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
 VALUES('OR-0004','خطأ في إستجلاب تاريخ إنتاج/إنتهاء الطلبية ','I','Error During Fetching The Order Manufacturing/Expiring Date ');
 INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
 VALUES('OR-0006','المخزون غير كافي لإكمال العملية','S','The Stock Is Not Enough To Complete The Order ');
+
+CREATE SEQUENCE seq_orders_id
+  INCREMENT BY 1
+  START WITH 171
+  MINVALUE 0
+  MAXVALUE 99999999999
+  NOCYCLE
+  NOORDER
+  CACHE 5
+/
