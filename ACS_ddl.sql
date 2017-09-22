@@ -924,8 +924,7 @@ alter table products add Max_i_Quantity  Number(10) default 0;
 /
 
 --
-select a. from products a, products_prices b
-where a.systemid = b.product_i_id;
+
 
 
 /*
@@ -990,7 +989,7 @@ VALUES(4,'MASTER','MASTER REPORT','تقرير الخدمات/المنتجات');
 /
 ALTER TABLE users_permissions MODIFY ITEM_NAME VARCHAR2(50) NOT NULL
 /
-INSERT INTO users_permissions  SELECT 'SA','hms','menu',MENU_C_TEXT,'I' FROM SYSTEM_MENUS
+-- INSERT INTO users_permissions  SELECT 'SA','hms','menu',MENU_C_TEXT,'I' FROM SYSTEM_MENUS
 /
 ALTER TABLE users_permissions 
 ADD CONSTRAINT uk_ITEM_NAME UNIQUE (ITEM_NAME)
