@@ -1000,6 +1000,41 @@ ALTER TABLE SYSTEM_MENUS
 ADD CONSTRAINT uk_MENU_C_TEXT UNIQUE (MENU_C_TEXT)
 USING INDEX
 /
+<<<<<<< HEAD
+
+INSERT INTO users_permissions (LOGIN_NAME,APPLICATION,ITEM_TYPE,ITEM_NAME,PRIVILEDGE,MODULE_C_NAME)
+VALUES('SA','hms','menu','التصنيف','I','MASTER');
+INSERT INTO users_permissions (LOGIN_NAME,APPLICATION,ITEM_TYPE,ITEM_NAME,PRIVILEDGE,MODULE_C_NAME)
+VALUES('SA','hms','menu','اسعار الخدمات/المنتجات','I','MASTER');
+INSERT INTO users_permissions (LOGIN_NAME,APPLICATION,ITEM_TYPE,ITEM_NAME,PRIVILEDGE,MODULE_C_NAME)
+VALUES('SA','hms','menu','انواع المنتجات','I','MASTER');
+INSERT INTO users_permissions (LOGIN_NAME,APPLICATION,ITEM_TYPE,ITEM_NAME,PRIVILEDGE,MODULE_C_NAME)
+VALUES('SA','hms','menu','وحدات القياس','I','MASTER');
+INSERT INTO users_permissions (LOGIN_NAME,APPLICATION,ITEM_TYPE,ITEM_NAME,PRIVILEDGE,MODULE_C_NAME)
+VALUES('SA','hms','menu','تعريف الاطباء','I','MASTER');
+INSERT INTO users_permissions (LOGIN_NAME,APPLICATION,ITEM_TYPE,ITEM_NAME,PRIVILEDGE,MODULE_C_NAME)
+VALUES('SA','hms','menu','تعريف الأدوية','I','MASTER');
+INSERT INTO users_permissions (LOGIN_NAME,APPLICATION,ITEM_TYPE,ITEM_NAME,PRIVILEDGE,MODULE_C_NAME)
+VALUES('SA','hms','menu','تعريف خدمات المعمل','I','MASTER');
+INSERT INTO users_permissions (LOGIN_NAME,APPLICATION,ITEM_TYPE,ITEM_NAME,PRIVILEDGE,MODULE_C_NAME)
+VALUES('SA','hms','menu','تقرير العقودات','I','MASTER');
+INSERT INTO users_permissions (LOGIN_NAME,APPLICATION,ITEM_TYPE,ITEM_NAME,PRIVILEDGE,MODULE_C_NAME)
+VALUES('SA','hms','menu','تقرير الاسعار','I','MASTER');
+INSERT INTO users_permissions (LOGIN_NAME,APPLICATION,ITEM_TYPE,ITEM_NAME,PRIVILEDGE,MODULE_C_NAME)
+VALUES('SA','hms','menu','تقرير وحدات القياس','I','MASTER');
+INSERT INTO users_permissions (LOGIN_NAME,APPLICATION,ITEM_TYPE,ITEM_NAME,PRIVILEDGE,MODULE_C_NAME)
+VALUES('SA','hms','menu','تقرير التصنيف للمنتجات','I','MASTER');
+INSERT INTO users_permissions (LOGIN_NAME,APPLICATION,ITEM_TYPE,ITEM_NAME,PRIVILEDGE,MODULE_C_NAME)
+VALUES('SA','hms','menu','تقرير الخدمات/المنتجات','I','MASTER');
+INSERT INTO users_permissions (LOGIN_NAME,APPLICATION,ITEM_TYPE,ITEM_NAME,PRIVILEDGE,MODULE_C_NAME)
+VALUES('SA','hms','menu','الاعدادات','I','MASTER');
+INSERT INTO users_permissions (LOGIN_NAME,APPLICATION,ITEM_TYPE,ITEM_NAME,PRIVILEDGE,MODULE_C_NAME)
+VALUES('SA','hms','menu','التقارير','I','MASTER');
+/
+
+ALTER TABLE users_permissions ADD MODULE_C_NAME VARCHAR2(20) NOT NULL
+/
+=======
 INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
 VALUES('ST-0001','خطأ في إسترجاع المخزون','I','Error While Retrieving The Stock');
 INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
@@ -1008,3 +1043,28 @@ INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
 VALUES('ST-0090','تحذير ، المخزون تعدى الحد الأدنى','S','Warrning , The Stock Exceeded It''s  Minimum Amount');
 INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
 VALUES('ST-0091','تحذير ، المخزون سيتعدى الحد الأدنى بعد إكمال هذه العملية','S','Warrning , The Stock Will Exceed It''s  Minimum Amount After This Transaction');
+>>>>>>> e770225625bdd710f14e599f78670929497fd0df
+INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
+VALUES('ST-0001','خطأ في إسترجاع المخزون','I','Error While Retrieving The Stock');
+INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
+VALUES('ST-0009','خطأ أثناء إسترجاع أقل  قيمة للمخزون','I','Error While Retrieving The Minimum Stock Amount');
+INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
+VALUES('ST-0090','تحذير ، المخزون تعدى الحد الأدنى','S','Warrning , The Stock Exceeded It''s  Minimum Amount');
+INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
+VALUES('ST-0091','تحذير ، المخزون سيتعدى الحد الأدنى بعد إكمال هذه العملية','S','Warrning , The Stock Will Exceed It''s  Minimum Amount After This Transaction');
+INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
+VALUES('ST-0092','تحذير ، سيتم إستهلاك المخزون كاملا ','I','Warrning, The Stock Will Be Fully Consumed ');
+INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
+VALUES('OR-0004','خطأ في إستجلاب تاريخ إنتاج/إنتهاء الطلبية ','I','Error During Fetching The Order Manufacturing/Expiring Date ');
+INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
+VALUES('OR-0006','المخزون غير كافي لإكمال العملية','S','The Stock Is Not Enough To Complete The Order ');
+
+CREATE SEQUENCE seq_orders_id
+  INCREMENT BY 1
+  START WITH 171
+  MINVALUE 0
+  MAXVALUE 99999999999
+  NOCYCLE
+  NOORDER
+  CACHE 5
+/
