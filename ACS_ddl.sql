@@ -1043,6 +1043,7 @@ VALUES('ST-0090','تحذير ، المخزون تعدى الحد الأدنى','
 INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
 VALUES('ST-0091','تحذير ، المخزون سيتعدى الحد الأدنى بعد إكمال هذه العملية','S','Warrning , The Stock Will Exceed It''s  Minimum Amount After This Transaction');
 >>>>>>> e770225625bdd710f14e599f78670929497fd0df
+<<<<<<< HEAD
 INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
 VALUES('ST-0001','خطأ في إسترجاع المخزون','I','Error While Retrieving The Stock');
 INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
@@ -1094,3 +1095,56 @@ INSERT INTO dictdetl (DETL_C_REPID,DETL_C_COLM,DETL_C_DISP,DETL_C_FILT)
 VALUES('PH REP02','IN_OUT_ORDER_C_TYPE','إذن دخول','In');
 INSERT INTO dictdetl (DETL_C_REPID,DETL_C_COLM,DETL_C_DISP,DETL_C_FILT)
 VALUES('PH REP02','IN_OUT_ORDER_C_TYPE','إذن خروج','Out');
+=======
+
+
+-- Start of DDL Script for Table USER_MASTER
+
+
+CREATE TABLE user_master
+    (user_c_id                      VARCHAR2(10) NOT NULL,
+    emp_c_id                       VARCHAR2(10),
+    user_c_name                    VARCHAR2(100) NOT NULL,
+    user_c_pass                    VARCHAR2(30) NOT NULL,
+    user_c_level                   VARCHAR2(10) NOT NULL,
+    user_c_daytime_restrict        CHAR(1) NOT NULL,
+    user_c_act_lock                CHAR(1) NOT NULL,
+    user_c_acc_locked              CHAR(1) NOT NULL,
+    user_d_lock_date               DATE,
+    user_c_acc_rele                CHAR(1),
+    user_i_acc_releprd             NUMBER(2,0),
+    user_c_firstpass_change        CHAR(1) NOT NULL,
+    user_c_pass_expiration         CHAR(1) NOT NULL,
+    user_i_pass_expiry_period      NUMBER(2,0),
+    user_d_pass_expiry_date        DATE,
+    user_i_concurrent              NUMBER(2,0) NOT NULL,
+    user_c_pwdhist                 CHAR(1) NOT NULL,
+    user_d_expiry                  DATE,
+    user_i_pwdhist_count           NUMBER(2,0),
+    user_c_sts                     CHAR(1) NOT NULL,
+    direct_c_auth                  CHAR(1) NOT NULL,
+    auth_c_limit                   CHAR(1) NOT NULL,
+    user_c_lang                    VARCHAR2(10),
+    entered_c_by                   VARCHAR2(10),
+    user_i_graces                  NUMBER(2,0),
+    user_c_type                    CHAR(1) DEFAULT 'U' NOT NULL,
+    user_c_st                      CHAR(1),
+    user_i_grace                   NUMBER(2,0),
+    user_chgpass_count             NUMBER)
+  PARALLEL (DEGREE DEFAULT)
+  LOGGING
+  MONITORING
+/
+
+
+-- Constraints for USER_MASTER
+
+ALTER TABLE user_master
+ADD CONSTRAINT ck_user_master1 CHECK (user_c_type in ('C','U'))
+ENABLE NOVALIDATE
+/
+
+
+---------------------------------------
+
+>>>>>>> 59c23844bd764e9128f2d28e300d39b01f161015
