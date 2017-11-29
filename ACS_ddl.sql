@@ -925,6 +925,97 @@ alter table products add Max_i_Quantity  Number(10) default 0;
 
 --
 
+drop table room_bills
+/
+drop table room_bills_details
+/
+drop table room_records
+/
+drop table room_transactions
+/
+CREATE TABLE room_bills
+    (systemid                       NUMBER(32,0) ,
+    customer_id                    NUMBER(10,0),
+    room_c_id                      NUMBER(32,0),
+    bed_c_id                       NUMBER(32,0),
+    total_amount                   NUMBER(32,2),
+    paid_amount                    NUMBER(32,2),
+    bill_c_status                  VARCHAR2(10),
+    price                          NUMBER(32,2),
+    entery_date                    DATE,
+    entered_by                     VARCHAR2(10),
+    pass_by                        VARCHAR2(10),
+    companion                      VARCHAR2(50),
+    phone1                         NUMBER(10,0),
+    phone2                         NUMBER(10,0),
+    days                           NUMBER(10,0),
+    from_date                      DATE,
+    to_date                        DATE,
+    contractor_id                  VARCHAR2(32),
+    card_id                        VARCHAR2(32),
+    contract_class                 VARCHAR2(32),
+    card_issue_date                DATE,
+    card_end_date                  DATE)
+  NOPARALLEL
+  LOGGING
+  MONITORING
+/
+
+ALTER TABLE room_bills
+ADD CONSTRAINT pk_room_bills PRIMARY KEY (systemid)
+USING INDEX
+/
+
+CREATE TABLE room_bills_details
+    (systemid                       NUMBER(32,0),
+    room_c_id                      NUMBER(32,0),
+    service                        VARCHAR2(10),
+    price                          NUMBER(32,2),
+    room_price                     NUMBER(32,2),
+    entery_date                    DATE,
+    entered_by                     VARCHAR2(10),
+    pass_by                        VARCHAR2(10))
+  NOPARALLEL
+  LOGGING
+  MONITORING
+/
+
+CREATE TABLE room_records
+    (systemid                       NUMBER(32,0) ,
+    room_c_type                    VARCHAR2(10),
+    room_c_description             VARCHAR2(250),
+    beds                           NUMBER(32,0),
+    room_c_status                  VARCHAR2(10),
+    entery_date                    DATE,
+    entered_by                     VARCHAR2(10))
+  NOPARALLEL
+  LOGGING
+  MONITORING
+/
+
+ALTER TABLE room_records
+ADD CONSTRAINT pk_room_records PRIMARY KEY (systemid)
+USING INDEX
+/
+CREATE TABLE room_transactions
+    (systemid                       NUMBER(32,0) ,
+    room_bill_id                   NUMBER(32,0),
+    room_c_id                      NUMBER(32,0),
+    service                        VARCHAR2(10),
+    amount                         NUMBER(32,2),
+    days                           NUMBER(32,0),
+    entery_date                    DATE,
+    entered_by                     VARCHAR2(10),
+    pass_by                        VARCHAR2(10))
+  NOPARALLEL
+  LOGGING
+  MONITORING
+/
+
+ALTER TABLE room_transactions
+ADD CONSTRAINT pk_room_transactions PRIMARY KEY (systemid)
+USING INDEX
+/
 
 
 /*
