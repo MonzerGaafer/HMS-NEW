@@ -1018,6 +1018,29 @@ USING INDEX
 /
 
 
+CREATE TABLE contract_classes
+    (systemid                       NUMBER NOT NULL,
+    contractor_id                  NUMBER NOT NULL,
+    contract_c_class               VARCHAR2(10) NOT NULL,
+    class_c_description            VARCHAR2(99),
+    enry_date                      DATE,
+    enter_by                       VARCHAR2(10))
+  NOPARALLEL
+  LOGGING
+  MONITORING
+/
+
+ALTER TABLE contract_classes
+ADD CONSTRAINT pk_contract_class PRIMARY KEY (systemid)
+USING INDEX
+/
+
+ALTER TABLE contract_classes
+ADD CONSTRAINT uk_contract_class UNIQUE (contractor_id, contract_c_class)
+USING INDEX
+/
+
+
 /*
 
 --//--//--//--//---/-/-/-/-/
