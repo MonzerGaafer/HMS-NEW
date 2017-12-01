@@ -220,3 +220,51 @@ CREATE TABLE room_bills_details
   LOGGING
   MONITORING
 /
+
+
+
+CREATE TABLE bill_issue
+    (systemid                       NUMBER NOT NULL,
+    customer_id                    NUMBER NOT NULL,
+    contractor_id                  NUMBER,
+    card_id                        VARCHAR2(20),
+    card_issue_date                DATE,
+    card_expire_date               DATE,
+    total_paid_amount              NUMBER(12,2) NOT NULL,
+    bill_status                    VARCHAR2(10),
+    entry_date                     DATE,
+    enter_by                       VARCHAR2(10),
+    window_name                    VARCHAR2(50) NOT NULL,
+    class_c_id                     NUMBER)
+  NOPARALLEL
+  LOGGING
+  MONITORING
+/
+
+ALTER TABLE bill_issue
+ADD CONSTRAINT pk_issu PRIMARY KEY (systemid)
+USING INDEX
+/
+
+CREATE TABLE bill_issue_detail
+    (systemid                       NUMBER(38,0) NOT NULL,
+    product_id                     NUMBER(38,0) NOT NULL,
+    quantity                       NUMBER NOT NULL,
+    product_price                  NUMBER(12,2) NOT NULL,
+    contract_price                 NUMBER(12,2),
+    diffrent_amount                NUMBER(12,2),
+    deduct_amount                  NUMBER(12,5),
+    paid_amount                    NUMBER(12,2) NOT NULL,
+    window_name                    VARCHAR2(50) NOT NULL,
+    entry_date                     DATE ,
+    enter_by                       VARCHAR2(50) NOT NULL,
+    pass_by                        VARCHAR2(50))
+  NOPARALLEL
+  LOGGING
+  MONITORING
+/
+
+ALTER TABLE bill_issue_detail
+ADD CONSTRAINT pk_issu_detail PRIMARY KEY (systemid, product_id, entry_date)
+USING INDEX
+/
