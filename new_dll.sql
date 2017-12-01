@@ -152,3 +152,71 @@ USING INDEX
 
 
 /*
+
+CREATE TABLE bed_inventory
+    (systemid                       NUMBER(32,0),
+    room_c_id                      NUMBER(32,0),
+    bed_c_id                       NUMBER(32,0),
+    bed_c_status                   VARCHAR2(10),
+    price                          NUMBER(32,2),
+    entery_date                    DATE,
+    entered_by                     VARCHAR2(10))
+  NOPARALLEL
+  LOGGING
+  MONITORING
+/
+
+ALTER TABLE bed_inventory
+ADD CONSTRAINT unq_bed_inventory UNIQUE (systemid, room_c_id, bed_c_id)
+USING INDEX
+/
+
+CREATE TABLE room_bills
+    (systemid                       NUMBER(32,0) ,
+    customer_id                    NUMBER(10,0),
+    room_c_id                      NUMBER(32,0),
+    bed_c_id                       NUMBER(32,0),
+    total_amount                   NUMBER(32,2),
+    paid_amount                    NUMBER(32,2),
+    bill_c_status                  VARCHAR2(10),
+    price                          NUMBER(32,2),
+    entery_date                    DATE,
+    entered_by                     VARCHAR2(10),
+    pass_by                        VARCHAR2(10),
+    companion                      VARCHAR2(50),
+    phone1                         NUMBER(10,0),
+    phone2                         NUMBER(10,0),
+    days                           NUMBER(10,0),
+    from_date                      DATE,
+    to_date                        DATE,
+    contractor_id                  VARCHAR2(32),
+    card_id                        VARCHAR2(32),
+    contract_class                 VARCHAR2(32),
+    card_issue_date                DATE,
+    card_end_date                  DATE,
+    operation_type                 VARCHAR2(99),
+    doctor1                        VARCHAR2(99),
+    doctor2                        VARCHAR2(99))
+  NOPARALLEL
+  LOGGING
+  MONITORING
+/
+
+ALTER TABLE room_bills
+ADD CONSTRAINT pk_room_bills PRIMARY KEY (systemid)
+USING INDEX
+/
+
+CREATE TABLE room_bills_details
+    (systemid                       NUMBER(32,0),
+    room_c_id                      NUMBER(32,0),
+    service                        VARCHAR2(10),
+    price                          NUMBER(32,2),
+    room_price                     NUMBER(32,2),
+    entery_date                    DATE,
+    entered_by                     VARCHAR2(10),
+    pass_by                        VARCHAR2(10))
+  NOPARALLEL
+  LOGGING
+  MONITORING
+/
