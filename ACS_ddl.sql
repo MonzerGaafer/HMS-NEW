@@ -1262,3 +1262,117 @@ ENABLE NOVALIDATE
 ---------------------------------------
 
 >>>>>>> 59c23844bd764e9128f2d28e300d39b01f161015
+ 
+
+-- PHARMACY MODIFICTIONS 
+CREATE TABLE STORES
+  (
+  store_i_id NUMBER (2),
+  store_c_desc VARCHAR2 (250),
+ PRIMARY KEY (store_i_id)
+ )
+  ORGANIZATION INDEX 
+/
+
+
+
+CREATE TABLE pharmacies
+  (
+  pharmacy_i_id     NUMBER (2),
+  pharmacy_C_desc   VARCHAR2(250),
+  store_i_id        NUMBER (2),
+  store_c_main      VARCHAR2 (1),
+  
+ PRIMARY KEY (pharmacy_i_id,store_i_id)
+ )
+  ORGANIZATION INDEX 
+/
+
+CREATE TABLE pharmacies_users
+  (
+  pharmacy_i_id NUMBER (2),
+  USER_c_NAME VARCHAR2(250),
+  
+ PRIMARY KEY (pharmacy_i_id,USER_c_NAME)
+ )
+  ORGANIZATION INDEX 
+/
+
+ALTER TABLE STOCKS 
+RENAME COLUMN UNIT_I_ID TO store_I_ID
+/
+
+ALTER TABLE STOCKS ADD CONSTRAINT PK_STOCKS
+  PRIMARY KEY (
+  PRODUCT_I_ID
+  ,STORE_I_ID
+)
+/
+ALTER TABLE IN_OUT_ORDERS 
+ ADD (
+  ORDER_I_PRICE NUMBER (32, 2),
+  STORE_I_ID NUMBER
+ )
+/
+ALTER TABLE in_out_ordersdetails 
+ ADD (
+  ORDER_I_PRICE NUMBER (32, 2),
+  STORE_I_ID NUMBER
+ )
+/
+
+ALTER TABLE in_out_ordersdetails 
+ ADD (
+  ORDER_c_type VARCHAR2(3)
+ )
+/
+
+ALTER TABLE IN_OUT_ORDERSDETAILS 
+ ADD (
+  current_c_sts VARCHAR2 (20),
+  current_i_amount NUMBER (32)
+ )
+/
+
+
+
+
+ALTER TABLE in_out_ordersdetails ADD CONSTRAINT chk_ORDER_AMOUNT
+  CHECK (
+  quantity > 0
+)
+/
+
+
+
+ALTER TABLE in_out_ordersdetails ADD CONSTRAINT chk_out_quanttiy
+  CHECK (
+  current_i_amount <= quantity
+)
+/
+
+
+ALTER TABLE stocks ADD CONSTRAINT chk_stock_amt
+  CHECK (
+   quantity >= 0
+)
+/
+
+
+INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
+VALUES('OR-0001','حدث خطأ أثناء تحديث الطلبية','S','Error During Updating The Order');
+INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
+VALUES('OR-0002','خطأ في إستجلاب الطلبية الجديدة','S','Error During Fetching The New Order');
+INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
+VALUES('OR-0003','خطأ في إستجلاب كمية الطلبية الجديدة','S','Error During Fetching The New Order Quantity');
+INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
+VALUES('ST-0002','المخزون أقل من القيمة الخارجة','S','The Stock Is Less Than The Wanted Quantity');
+INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
+VALUES('ST-0003','حدث خطأ أثناء تحديث المخزون','S','Error During Updating The Stock');
+INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
+VALUES('ST-0005','خطأ في المحزون','S','Error In The Stock');
+INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
+VALUES('ST-0101','لا يوجد مخزون متاح','S','The Stock IS Empty');
+INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
+VALUES('PH-050','خطأ في تحديد الصيديلة التى ينتمي لها المستخدم','S','Error When Selecting The User Pharmacy');
+commit;
