@@ -1357,7 +1357,12 @@ ALTER TABLE stocks ADD CONSTRAINT chk_stock_amt
    quantity >= 0
 )
 /
+ALTER TABLE IN_OUT_ORDERSDETAILS 
+ ADD (
+  IN_OUT_ORDER_I_ID NUMBER (32)
 
+ )
+/
 
 INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
 VALUES('OR-0001','حدث خطأ أثناء تحديث الطلبية','S','Error During Updating The Order');
