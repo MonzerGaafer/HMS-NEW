@@ -1381,3 +1381,17 @@ VALUES('ST-0101','لا يوجد مخزون متاح','S','The Stock IS Empty');
 INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
 VALUES('PH-050','خطأ في تحديد الصيديلة التى ينتمي لها المستخدم','S','Error When Selecting The User Pharmacy');
 commit;
+
+
+INSERT INTO dictmast (DICT_C_REPID,DICT_C_TYPE,DICT_C_TITLE,DICT_C_TABLE,DICT_C_COLM,DICT_C_FTYPE,DICT_I_FLEN,DICT_I_FDEC,DICT_C_CASE,DICT_C_ORIENTATION,DICT_C_SORTORDER)
+VALUES('PH REP02','F','رقم المخزن','IN_OUT_ORDERS','store_i_id','N',10,NULL,NULL,NULL,NULL);
+
+INSERT INTO actors (SYSTEMID,ACTOR_I_ID,ACTOR_C_TYPE,ACTOR_C_NAME,ACTOR_C_ADDRESS,ACTOR_C_MOBILE,ACTOR_C_EMAIL,ENTRY_D_DATE,ENTERED_C_BY,ACTOR_C_STS,NATIONAL_I_ID,MOTHER_C_NAME)
+VALUES(0,0,'Patient',' ','....',' ',NULL,TO_DATE('2017-09-05 00:00:00', 'YYYY-MM-DD HH24:MI:SS'),'SA','Active',NULL,NULL);
+
+ ALTER TABLE actors 
+ ADD (
+ National_i_id              varchar2(20),
+ Mother_c_Name              varchar2(50)
+ )
+ /
