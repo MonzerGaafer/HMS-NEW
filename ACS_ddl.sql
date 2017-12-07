@@ -1395,3 +1395,8 @@ VALUES(0,0,'Patient',' ','....',' ',NULL,TO_DATE('2017-09-05 00:00:00', 'YYYY-MM
  Mother_c_Name              varchar2(50)
  )
  /
+ALTER TABLE PRODUCTS 
+ ADD (
+  ACTOR_I_ID NUMBER (10)
+ )
+/
