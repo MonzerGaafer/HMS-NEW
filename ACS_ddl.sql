@@ -499,17 +499,17 @@ USING INDEX
 /
 
 INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
-VALUES('DL-0002','Are you sure to delete this record','Q','هل انت متاكد من انك تريد حذف السجل');
+VALUES('DL-0002','Are you sure to delete this record','Q','?? ??? ????? ?? ??? ???? ??? ?????');
 INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
-VALUES('UP-0004','Record updated Successfully','I','تمت العملية بنجاح ');
+VALUES('UP-0004','Record updated Successfully','I','??? ??????? ????? ');
 /
 INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
-VALUES('UP-0005','Updation of Records failed','S','فشلت العملية');
+VALUES('UP-0005','Updation of Records failed','S','???? ???????');
 /
 INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
-VALUES('UP-0001','Updation of Control Master Failed','S','فشلت العملية');
+VALUES('UP-0001','Updation of Control Master Failed','S','???? ???????');
 INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
-VALUES('SL-0006','Selection of Control Number Failed','S','فشل الاختيار للرقم');
+VALUES('SL-0006','Selection of Control Number Failed','S','??? ???????? ?????');
 /
 
 
@@ -604,7 +604,7 @@ USING INDEX
 /
 
 INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
-VALUES('IF-0017','فشل إستعادة السعر الأصلي للخدمة','S','failed to retrive service price');
+VALUES('IF-0017','??? ??????? ????? ?????? ??????','S','failed to retrive service price');
 /
 drop table contract_prices;
 /
@@ -1054,19 +1054,19 @@ ALTER TABLE IN_OUT_ORDERSDETAILS
  )
 /
 INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
-VALUES('OR-0001','حدث خطأ أثناء تحديث الطلبية','S','Error During Updating The Order');
+VALUES('OR-0001','??? ??? ????? ????? ???????','S','Error During Updating The Order');
 INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
-VALUES('OR-0002','خطأ في إستجلاب الطلبية الجديدة','S','Error During Fetching The New Order');
+VALUES('OR-0002','??? ?? ??????? ??????? ???????','S','Error During Fetching The New Order');
 INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
-VALUES('OR-0003','خطأ في إستجلاب كمية الطلبية الجديدة','S','Error During Fetching The New Order Quantity');
+VALUES('OR-0003','??? ?? ??????? ???? ??????? ???????','S','Error During Fetching The New Order Quantity');
 INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
-VALUES('ST-0002','المخزون أقل من القيمة الخارجة','S','The Stock Is Less Than The Wanted Quantity');
+VALUES('ST-0002','??????? ??? ?? ?????? ???????','S','The Stock Is Less Than The Wanted Quantity');
 INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
-VALUES('ST-0003','حدث خطأ أثناء تحديث المخزون','S','Error During Updating The Stock');
+VALUES('ST-0003','??? ??? ????? ????? ???????','S','Error During Updating The Stock');
 INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
-VALUES('ST-0005','خطأ في المحزون','S','Error In The Stock');
+VALUES('ST-0005','??? ?? ???????','S','Error In The Stock');
 INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
-VALUES('ST-0101','لا يوجد مخزون متاح','S','The Stock IS Empty');
+VALUES('ST-0101','?? ???? ????? ????','S','The Stock IS Empty');
 /
 
 CREATE TABLE SYSTEM_MENUS 
@@ -1077,29 +1077,29 @@ MENU_NAME VARCHAR2(30),
 /
 
 INSERT INTO SYSTEM_MENUS (SYSTEMID,MODULE_C_NAME,MENU_NAME,MENU_C_TEXT)
-VALUES(1,'MASTER','SETUP','التصنيف');
+VALUES(1,'MASTER','SETUP','???????');
 INSERT INTO SYSTEM_MENUS (SYSTEMID,MODULE_C_NAME,MENU_NAME,MENU_C_TEXT)
-VALUES(12,'MASTER','SETUP','اسعار الخدمات/المنتجات');
+VALUES(12,'MASTER','SETUP','????? ???????/????????');
 INSERT INTO SYSTEM_MENUS (SYSTEMID,MODULE_C_NAME,MENU_NAME,MENU_C_TEXT)
-VALUES(13,'MASTER','SETUP','انواع المنتجات');
+VALUES(13,'MASTER','SETUP','????? ????????');
 INSERT INTO SYSTEM_MENUS (SYSTEMID,MODULE_C_NAME,MENU_NAME,MENU_C_TEXT)
-VALUES(14,'MASTER','SETUP','وحدات القياس');
+VALUES(14,'MASTER','SETUP','????? ??????');
 INSERT INTO SYSTEM_MENUS (SYSTEMID,MODULE_C_NAME,MENU_NAME,MENU_C_TEXT)
-VALUES(15,'MASTER','SETUP','تعريف الاطباء');
+VALUES(15,'MASTER','SETUP','????? ???????');
 INSERT INTO SYSTEM_MENUS (SYSTEMID,MODULE_C_NAME,MENU_NAME,MENU_C_TEXT)
-VALUES(16,'MASTER','SETUP','تعريف الأدوية');
+VALUES(16,'MASTER','SETUP','????? ???????');
 INSERT INTO SYSTEM_MENUS (SYSTEMID,MODULE_C_NAME,MENU_NAME,MENU_C_TEXT)
-VALUES(17,'MASTER','SETUP','تعريف خدمات المعمل');
+VALUES(17,'MASTER','SETUP','????? ????? ??????');
 INSERT INTO SYSTEM_MENUS (SYSTEMID,MODULE_C_NAME,MENU_NAME,MENU_C_TEXT)
-VALUES(18,'MASTER','MASTER REPORT','تقرير العقودات');
+VALUES(18,'MASTER','MASTER REPORT','????? ????????');
 INSERT INTO SYSTEM_MENUS (SYSTEMID,MODULE_C_NAME,MENU_NAME,MENU_C_TEXT)
-VALUES(19,'MASTER','MASTER REPORT','تقرير الاسعار');
+VALUES(19,'MASTER','MASTER REPORT','????? ???????');
 INSERT INTO SYSTEM_MENUS (SYSTEMID,MODULE_C_NAME,MENU_NAME,MENU_C_TEXT)
-VALUES(2,'MASTER','MASTER REPORT','تقرير وحدات القياس');
+VALUES(2,'MASTER','MASTER REPORT','????? ????? ??????');
 INSERT INTO SYSTEM_MENUS (SYSTEMID,MODULE_C_NAME,MENU_NAME,MENU_C_TEXT)
-VALUES(3,'MASTER','MASTER REPORT','تقرير التصنيف للمنتجات');
+VALUES(3,'MASTER','MASTER REPORT','????? ??????? ????????');
 INSERT INTO SYSTEM_MENUS (SYSTEMID,MODULE_C_NAME,MENU_NAME,MENU_C_TEXT)
-VALUES(4,'MASTER','MASTER REPORT','تقرير الخدمات/المنتجات');
+VALUES(4,'MASTER','MASTER REPORT','????? ???????/????????');
 /
 ALTER TABLE users_permissions MODIFY ITEM_NAME VARCHAR2(50) NOT NULL
 /
@@ -1116,62 +1116,62 @@ USING INDEX
 <<<<<<< HEAD
 
 INSERT INTO users_permissions (LOGIN_NAME,APPLICATION,ITEM_TYPE,ITEM_NAME,PRIVILEDGE,MODULE_C_NAME)
-VALUES('SA','hms','menu','التصنيف','I','MASTER');
+VALUES('SA','hms','menu','???????','I','MASTER');
 INSERT INTO users_permissions (LOGIN_NAME,APPLICATION,ITEM_TYPE,ITEM_NAME,PRIVILEDGE,MODULE_C_NAME)
-VALUES('SA','hms','menu','اسعار الخدمات/المنتجات','I','MASTER');
+VALUES('SA','hms','menu','????? ???????/????????','I','MASTER');
 INSERT INTO users_permissions (LOGIN_NAME,APPLICATION,ITEM_TYPE,ITEM_NAME,PRIVILEDGE,MODULE_C_NAME)
-VALUES('SA','hms','menu','انواع المنتجات','I','MASTER');
+VALUES('SA','hms','menu','????? ????????','I','MASTER');
 INSERT INTO users_permissions (LOGIN_NAME,APPLICATION,ITEM_TYPE,ITEM_NAME,PRIVILEDGE,MODULE_C_NAME)
-VALUES('SA','hms','menu','وحدات القياس','I','MASTER');
+VALUES('SA','hms','menu','????? ??????','I','MASTER');
 INSERT INTO users_permissions (LOGIN_NAME,APPLICATION,ITEM_TYPE,ITEM_NAME,PRIVILEDGE,MODULE_C_NAME)
-VALUES('SA','hms','menu','تعريف الاطباء','I','MASTER');
+VALUES('SA','hms','menu','????? ???????','I','MASTER');
 INSERT INTO users_permissions (LOGIN_NAME,APPLICATION,ITEM_TYPE,ITEM_NAME,PRIVILEDGE,MODULE_C_NAME)
-VALUES('SA','hms','menu','تعريف الأدوية','I','MASTER');
+VALUES('SA','hms','menu','????? ???????','I','MASTER');
 INSERT INTO users_permissions (LOGIN_NAME,APPLICATION,ITEM_TYPE,ITEM_NAME,PRIVILEDGE,MODULE_C_NAME)
-VALUES('SA','hms','menu','تعريف خدمات المعمل','I','MASTER');
+VALUES('SA','hms','menu','????? ????? ??????','I','MASTER');
 INSERT INTO users_permissions (LOGIN_NAME,APPLICATION,ITEM_TYPE,ITEM_NAME,PRIVILEDGE,MODULE_C_NAME)
-VALUES('SA','hms','menu','تقرير العقودات','I','MASTER');
+VALUES('SA','hms','menu','????? ????????','I','MASTER');
 INSERT INTO users_permissions (LOGIN_NAME,APPLICATION,ITEM_TYPE,ITEM_NAME,PRIVILEDGE,MODULE_C_NAME)
-VALUES('SA','hms','menu','تقرير الاسعار','I','MASTER');
+VALUES('SA','hms','menu','????? ???????','I','MASTER');
 INSERT INTO users_permissions (LOGIN_NAME,APPLICATION,ITEM_TYPE,ITEM_NAME,PRIVILEDGE,MODULE_C_NAME)
-VALUES('SA','hms','menu','تقرير وحدات القياس','I','MASTER');
+VALUES('SA','hms','menu','????? ????? ??????','I','MASTER');
 INSERT INTO users_permissions (LOGIN_NAME,APPLICATION,ITEM_TYPE,ITEM_NAME,PRIVILEDGE,MODULE_C_NAME)
-VALUES('SA','hms','menu','تقرير التصنيف للمنتجات','I','MASTER');
+VALUES('SA','hms','menu','????? ??????? ????????','I','MASTER');
 INSERT INTO users_permissions (LOGIN_NAME,APPLICATION,ITEM_TYPE,ITEM_NAME,PRIVILEDGE,MODULE_C_NAME)
-VALUES('SA','hms','menu','تقرير الخدمات/المنتجات','I','MASTER');
+VALUES('SA','hms','menu','????? ???????/????????','I','MASTER');
 INSERT INTO users_permissions (LOGIN_NAME,APPLICATION,ITEM_TYPE,ITEM_NAME,PRIVILEDGE,MODULE_C_NAME)
-VALUES('SA','hms','menu','الاعدادات','I','MASTER');
+VALUES('SA','hms','menu','?????????','I','MASTER');
 INSERT INTO users_permissions (LOGIN_NAME,APPLICATION,ITEM_TYPE,ITEM_NAME,PRIVILEDGE,MODULE_C_NAME)
-VALUES('SA','hms','menu','التقارير','I','MASTER');
+VALUES('SA','hms','menu','????????','I','MASTER');
 /
 
 ALTER TABLE users_permissions ADD MODULE_C_NAME VARCHAR2(20) NOT NULL
 /
 =======
 INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
-VALUES('ST-0001','خطأ في إسترجاع المخزون','I','Error While Retrieving The Stock');
+VALUES('ST-0001','??? ?? ??????? ???????','I','Error While Retrieving The Stock');
 INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
-VALUES('ST-0009','خطأ أثناء إسترجاع أقل  قيمة للمخزون','I','Error While Retrieving The Minimum Stock Amount');
+VALUES('ST-0009','??? ????? ??????? ???  ???? ???????','I','Error While Retrieving The Minimum Stock Amount');
 INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
-VALUES('ST-0090','تحذير ، المخزون تعدى الحد الأدنى','S','Warrning , The Stock Exceeded It''s  Minimum Amount');
+VALUES('ST-0090','????? ? ??????? ???? ???? ??????','S','Warrning , The Stock Exceeded It''s  Minimum Amount');
 INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
-VALUES('ST-0091','تحذير ، المخزون سيتعدى الحد الأدنى بعد إكمال هذه العملية','S','Warrning , The Stock Will Exceed It''s  Minimum Amount After This Transaction');
+VALUES('ST-0091','????? ? ??????? ?????? ???? ?????? ??? ????? ??? ???????','S','Warrning , The Stock Will Exceed It''s  Minimum Amount After This Transaction');
 >>>>>>> e770225625bdd710f14e599f78670929497fd0df
 <<<<<<< HEAD
 INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
-VALUES('ST-0001','خطأ في إسترجاع المخزون','I','Error While Retrieving The Stock');
+VALUES('ST-0001','??? ?? ??????? ???????','I','Error While Retrieving The Stock');
 INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
-VALUES('ST-0009','خطأ أثناء إسترجاع أقل  قيمة للمخزون','I','Error While Retrieving The Minimum Stock Amount');
+VALUES('ST-0009','??? ????? ??????? ???  ???? ???????','I','Error While Retrieving The Minimum Stock Amount');
 INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
-VALUES('ST-0090','تحذير ، المخزون تعدى الحد الأدنى','S','Warrning , The Stock Exceeded It''s  Minimum Amount');
+VALUES('ST-0090','????? ? ??????? ???? ???? ??????','S','Warrning , The Stock Exceeded It''s  Minimum Amount');
 INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
-VALUES('ST-0091','تحذير ، المخزون سيتعدى الحد الأدنى بعد إكمال هذه العملية','S','Warrning , The Stock Will Exceed It''s  Minimum Amount After This Transaction');
+VALUES('ST-0091','????? ? ??????? ?????? ???? ?????? ??? ????? ??? ???????','S','Warrning , The Stock Will Exceed It''s  Minimum Amount After This Transaction');
 INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
-VALUES('ST-0092','تحذير ، سيتم إستهلاك المخزون كاملا ','I','Warrning, The Stock Will Be Fully Consumed ');
+VALUES('ST-0092','????? ? ???? ??????? ??????? ????? ','I','Warrning, The Stock Will Be Fully Consumed ');
 INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
-VALUES('OR-0004','خطأ في إستجلاب تاريخ إنتاج/إنتهاء الطلبية ','I','Error During Fetching The Order Manufacturing/Expiring Date ');
+VALUES('OR-0004','??? ?? ??????? ????? ?????/?????? ??????? ','I','Error During Fetching The Order Manufacturing/Expiring Date ');
 INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
-VALUES('OR-0006','المخزون غير كافي لإكمال العملية','S','The Stock Is Not Enough To Complete The Order ');
+VALUES('OR-0006','??????? ??? ???? ?????? ???????','S','The Stock Is Not Enough To Complete The Order ');
 
 CREATE SEQUENCE seq_orders_id
   INCREMENT BY 1
@@ -1184,31 +1184,31 @@ CREATE SEQUENCE seq_orders_id
 /
 
 INSERT INTO dictmast (DICT_C_REPID,DICT_C_TYPE,DICT_C_TITLE,DICT_C_TABLE,DICT_C_COLM,DICT_C_FTYPE,DICT_I_FLEN,DICT_I_FDEC,DICT_C_CASE,DICT_C_ORIENTATION,DICT_C_SORTORDER)
-VALUES('PH REP01','R','تقرير المحزون','dw_rep_stock',NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+VALUES('PH REP01','R','????? ???????','dw_rep_stock',NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 INSERT INTO dictmast (DICT_C_REPID,DICT_C_TYPE,DICT_C_TITLE,DICT_C_TABLE,DICT_C_COLM,DICT_C_FTYPE,DICT_I_FLEN,DICT_I_FDEC,DICT_C_CASE,DICT_C_ORIENTATION,DICT_C_SORTORDER)
-VALUES('PH REP01','F','الكمية','stocks','quantity','N',10,NULL,NULL,NULL,NULL);
+VALUES('PH REP01','F','??????','stocks','quantity','N',10,NULL,NULL,NULL,NULL);
 INSERT INTO dictmast (DICT_C_REPID,DICT_C_TYPE,DICT_C_TITLE,DICT_C_TABLE,DICT_C_COLM,DICT_C_FTYPE,DICT_I_FLEN,DICT_I_FDEC,DICT_C_CASE,DICT_C_ORIENTATION,DICT_C_SORTORDER)
-VALUES('PH REP01','F','رقم المنتج','stocks','product_i_id','N',10,NULL,NULL,NULL,NULL);
+VALUES('PH REP01','F','??? ??????','stocks','product_i_id','N',10,NULL,NULL,NULL,NULL);
 INSERT INTO dictmast (DICT_C_REPID,DICT_C_TYPE,DICT_C_TITLE,DICT_C_TABLE,DICT_C_COLM,DICT_C_FTYPE,DICT_I_FLEN,DICT_I_FDEC,DICT_C_CASE,DICT_C_ORIENTATION,DICT_C_SORTORDER)
-VALUES('PH REP02','F','تاريخ الطلبية','IN_OUT_ORDERSDETAILS','ENTRY_D_DATE','D',10,NULL,NULL,NULL,NULL);
+VALUES('PH REP02','F','????? ???????','IN_OUT_ORDERSDETAILS','ENTRY_D_DATE','D',10,NULL,NULL,NULL,NULL);
 INSERT INTO dictmast (DICT_C_REPID,DICT_C_TYPE,DICT_C_TITLE,DICT_C_TABLE,DICT_C_COLM,DICT_C_FTYPE,DICT_I_FLEN,DICT_I_FDEC,DICT_C_CASE,DICT_C_ORIENTATION,DICT_C_SORTORDER)
-VALUES('PH REP02','F','رقم المنتج','IN_OUT_ORDERSDETAILS','IN_OUT_ORDER_I_ID','N',10,NULL,NULL,NULL,NULL);
+VALUES('PH REP02','F','??? ??????','IN_OUT_ORDERSDETAILS','IN_OUT_ORDER_I_ID','N',10,NULL,NULL,NULL,NULL);
 INSERT INTO dictmast (DICT_C_REPID,DICT_C_TYPE,DICT_C_TITLE,DICT_C_TABLE,DICT_C_COLM,DICT_C_FTYPE,DICT_I_FLEN,DICT_I_FDEC,DICT_C_CASE,DICT_C_ORIENTATION,DICT_C_SORTORDER)
-VALUES('PH REP02','R','تقرير الطلبيات','dw_rep_inoutorders',NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+VALUES('PH REP02','R','????? ????????','dw_rep_inoutorders',NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 INSERT INTO dictmast (DICT_C_REPID,DICT_C_TYPE,DICT_C_TITLE,DICT_C_TABLE,DICT_C_COLM,DICT_C_FTYPE,DICT_I_FLEN,DICT_I_FDEC,DICT_C_CASE,DICT_C_ORIENTATION,DICT_C_SORTORDER)
-VALUES('PH REP02','F','تاريخ الإنتاج','IN_OUT_ORDERSDETAILS','MANUFACTURING_D_DATE','D',10,NULL,NULL,NULL,NULL);
+VALUES('PH REP02','F','????? ???????','IN_OUT_ORDERSDETAILS','MANUFACTURING_D_DATE','D',10,NULL,NULL,NULL,NULL);
 INSERT INTO dictmast (DICT_C_REPID,DICT_C_TYPE,DICT_C_TITLE,DICT_C_TABLE,DICT_C_COLM,DICT_C_FTYPE,DICT_I_FLEN,DICT_I_FDEC,DICT_C_CASE,DICT_C_ORIENTATION,DICT_C_SORTORDER)
-VALUES('PH REP02','F','تاريخ الإنتهاء','IN_OUT_ORDERSDETAILS','EXPIRY_D_DATE','D',10,NULL,NULL,NULL,NULL);
+VALUES('PH REP02','F','????? ????????','IN_OUT_ORDERSDETAILS','EXPIRY_D_DATE','D',10,NULL,NULL,NULL,NULL);
 INSERT INTO dictmast (DICT_C_REPID,DICT_C_TYPE,DICT_C_TITLE,DICT_C_TABLE,DICT_C_COLM,DICT_C_FTYPE,DICT_I_FLEN,DICT_I_FDEC,DICT_C_CASE,DICT_C_ORIENTATION,DICT_C_SORTORDER)
-VALUES('PH REP02','F','الكمية','IN_OUT_ORDERSDETAILS','QUANTITY','N',10,NULL,NULL,NULL,NULL);
+VALUES('PH REP02','F','??????','IN_OUT_ORDERSDETAILS','QUANTITY','N',10,NULL,NULL,NULL,NULL);
 INSERT INTO dictmast (DICT_C_REPID,DICT_C_TYPE,DICT_C_TITLE,DICT_C_TABLE,DICT_C_COLM,DICT_C_FTYPE,DICT_I_FLEN,DICT_I_FDEC,DICT_C_CASE,DICT_C_ORIENTATION,DICT_C_SORTORDER)
-VALUES('PH REP02','F','نوع الطلبية','IN_OUT_ORDERS','IN_OUT_ORDER_C_TYPE','L',10,NULL,NULL,NULL,NULL);
+VALUES('PH REP02','F','??? ???????','IN_OUT_ORDERS','IN_OUT_ORDER_C_TYPE','L',10,NULL,NULL,NULL,NULL);
 
 
 INSERT INTO dictdetl (DETL_C_REPID,DETL_C_COLM,DETL_C_DISP,DETL_C_FILT)
-VALUES('PH REP02','IN_OUT_ORDER_C_TYPE','إذن دخول','In');
+VALUES('PH REP02','IN_OUT_ORDER_C_TYPE','??? ????','In');
 INSERT INTO dictdetl (DETL_C_REPID,DETL_C_COLM,DETL_C_DISP,DETL_C_FILT)
-VALUES('PH REP02','IN_OUT_ORDER_C_TYPE','إذن خروج','Out');
+VALUES('PH REP02','IN_OUT_ORDER_C_TYPE','??? ????','Out');
 =======
 
 
@@ -1365,26 +1365,26 @@ ALTER TABLE IN_OUT_ORDERSDETAILS
 /
 
 INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
-VALUES('OR-0001','حدث خطأ أثناء تحديث الطلبية','S','Error During Updating The Order');
+VALUES('OR-0001','??? ??? ????? ????? ???????','S','Error During Updating The Order');
 INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
-VALUES('OR-0002','خطأ في إستجلاب الطلبية الجديدة','S','Error During Fetching The New Order');
+VALUES('OR-0002','??? ?? ??????? ??????? ???????','S','Error During Fetching The New Order');
 INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
-VALUES('OR-0003','خطأ في إستجلاب كمية الطلبية الجديدة','S','Error During Fetching The New Order Quantity');
+VALUES('OR-0003','??? ?? ??????? ???? ??????? ???????','S','Error During Fetching The New Order Quantity');
 INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
-VALUES('ST-0002','المخزون أقل من القيمة الخارجة','S','The Stock Is Less Than The Wanted Quantity');
+VALUES('ST-0002','??????? ??? ?? ?????? ???????','S','The Stock Is Less Than The Wanted Quantity');
 INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
-VALUES('ST-0003','حدث خطأ أثناء تحديث المخزون','S','Error During Updating The Stock');
+VALUES('ST-0003','??? ??? ????? ????? ???????','S','Error During Updating The Stock');
 INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
-VALUES('ST-0005','خطأ في المحزون','S','Error In The Stock');
+VALUES('ST-0005','??? ?? ???????','S','Error In The Stock');
 INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
-VALUES('ST-0101','لا يوجد مخزون متاح','S','The Stock IS Empty');
+VALUES('ST-0101','?? ???? ????? ????','S','The Stock IS Empty');
 INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
-VALUES('PH-050','خطأ في تحديد الصيديلة التى ينتمي لها المستخدم','S','Error When Selecting The User Pharmacy');
+VALUES('PH-050','??? ?? ????? ???????? ???? ????? ??? ????????','S','Error When Selecting The User Pharmacy');
 commit;
 
 
 INSERT INTO dictmast (DICT_C_REPID,DICT_C_TYPE,DICT_C_TITLE,DICT_C_TABLE,DICT_C_COLM,DICT_C_FTYPE,DICT_I_FLEN,DICT_I_FDEC,DICT_C_CASE,DICT_C_ORIENTATION,DICT_C_SORTORDER)
-VALUES('PH REP02','F','رقم المخزن','IN_OUT_ORDERS','store_i_id','N',10,NULL,NULL,NULL,NULL);
+VALUES('PH REP02','F','??? ??????','IN_OUT_ORDERS','store_i_id','N',10,NULL,NULL,NULL,NULL);
 
 INSERT INTO actors (SYSTEMID,ACTOR_I_ID,ACTOR_C_TYPE,ACTOR_C_NAME,ACTOR_C_ADDRESS,ACTOR_C_MOBILE,ACTOR_C_EMAIL,ENTRY_D_DATE,ENTERED_C_BY,ACTOR_C_STS,NATIONAL_I_ID,MOTHER_C_NAME)
 VALUES(0,0,'Patient',' ','....',' ',NULL,TO_DATE('2017-09-05 00:00:00', 'YYYY-MM-DD HH24:MI:SS'),'SA','Active',NULL,NULL);
@@ -1400,3 +1400,16 @@ ALTER TABLE PRODUCTS
   ACTOR_I_ID NUMBER (10)
  )
 /
+
+INSERT INTO dictmast (DICT_C_REPID,DICT_C_TYPE,DICT_C_TITLE,DICT_C_TABLE,DICT_C_COLM,DICT_C_FTYPE,DICT_I_FLEN,DICT_I_FDEC,DICT_C_CASE,DICT_C_ORIENTATION,DICT_C_SORTORDER)
+VALUES('RP REP02','R','تقرير الخدمات المقدمة','dw_bill_per_product_report',NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO dictmast (DICT_C_REPID,DICT_C_TYPE,DICT_C_TITLE,DICT_C_TABLE,DICT_C_COLM,DICT_C_FTYPE,DICT_I_FLEN,DICT_I_FDEC,DICT_C_CASE,DICT_C_ORIENTATION,DICT_C_SORTORDER)
+VALUES('RP REP02','F','المدخل','bill_issue','enter_by','C',10,NULL,NULL,NULL,NULL);
+INSERT INTO dictmast (DICT_C_REPID,DICT_C_TYPE,DICT_C_TITLE,DICT_C_TABLE,DICT_C_COLM,DICT_C_FTYPE,DICT_I_FLEN,DICT_I_FDEC,DICT_C_CASE,DICT_C_ORIENTATION,DICT_C_SORTORDER)
+VALUES('RP REP02','F','تاريخ الادخال','bill_issue','entry_date','D',10,NULL,NULL,NULL,NULL);
+INSERT INTO dictmast (DICT_C_REPID,DICT_C_TYPE,DICT_C_TITLE,DICT_C_TABLE,DICT_C_COLM,DICT_C_FTYPE,DICT_I_FLEN,DICT_I_FDEC,DICT_C_CASE,DICT_C_ORIENTATION,DICT_C_SORTORDER)
+VALUES('RP REP02','F','الطبيب المعالج','products','product_i_id','N',10,NULL,NULL,NULL,NULL);
+INSERT INTO dictmast (DICT_C_REPID,DICT_C_TYPE,DICT_C_TITLE,DICT_C_TABLE,DICT_C_COLM,DICT_C_FTYPE,DICT_I_FLEN,DICT_I_FDEC,DICT_C_CASE,DICT_C_ORIENTATION,DICT_C_SORTORDER)
+VALUES('RP REP02','F','الخدمة المقدمة','products','actor_i_id','N',10,NULL,NULL,NULL,NULL);
+INSERT INTO dictmast (DICT_C_REPID,DICT_C_TYPE,DICT_C_TITLE,DICT_C_TABLE,DICT_C_COLM,DICT_C_FTYPE,DICT_I_FLEN,DICT_I_FDEC,DICT_C_CASE,DICT_C_ORIENTATION,DICT_C_SORTORDER)
+VALUES('RP REP02','F','رقم جهة التعاقد','bill_issue','contractor_id','N',10,NULL,NULL,NULL,NULL);
