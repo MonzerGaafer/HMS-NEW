@@ -1690,3 +1690,8 @@ ADD CONSTRAINT pk_issu_detail PRIMARY KEY (systemid, product_id, entry_date)
 USING INDEX
 /
 
+INSERT INTO system_flag (FLAG_CODE,FLAG_DESC,FLAG_VALUE)
+VALUES('PRICING','New Price Application Immediatly Type NPI else NPL','NPI');
+INSERT INTO system_flag (FLAG_CODE,FLAG_DESC,FLAG_VALUE)
+VALUES('PROFS_RATE','Please Enter The Profit Rate For Selling Medicine','20');
+commit;
