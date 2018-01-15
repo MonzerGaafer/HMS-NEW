@@ -1708,3 +1708,6 @@ update  user_messages
 set msg_c_desc = 'تحذير ، تاريخ الإنتهاء بعد أقل من '
 where msg_c_id='IF-0018' ;
 commit;
+INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
+VALUES('OR-0009','الرجاء مراجعة الطلبية ،المجموع الكلي لا يساوي مجموع الطلبات','S','Please Check The Order , The Total''s Are Not Equal');
+commit;
