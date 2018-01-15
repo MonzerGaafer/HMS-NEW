@@ -74,7 +74,7 @@ CREATE TABLE bill_issue
     enter_by                       VARCHAR2(10),
     window_name                    VARCHAR2(50) NOT NULL,
     class_c_id                     NUMBER,
-    paid_by                        VARCHAR2(10),
+    pass_by                        VARCHAR2(10),
     returned_by                    VARCHAR2(10),
     lastmodify_d_date              DATE)
   NOPARALLEL
