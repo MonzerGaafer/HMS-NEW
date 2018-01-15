@@ -1703,3 +1703,8 @@ VALUES('PH REP04','F','Voucher No','bill_issue_detail','SYSTEMID','N',10,NULL,NU
 INSERT INTO dictmast (DICT_C_REPID,DICT_C_TYPE,DICT_C_TITLE,DICT_C_TABLE,DICT_C_COLM,DICT_C_FTYPE,DICT_I_FLEN,DICT_I_FDEC,DICT_C_CASE,DICT_C_ORIENTATION,DICT_C_SORTORDER)
 VALUES('PH REP04','R','تقرير الصيديلة','dw_rep_phar_sells',NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 commit;
+
+update  user_messages
+set msg_c_desc = 'تحذير ، تاريخ الإنتهاء بعد أقل من '
+where msg_c_id='IF-0018' ;
+commit;
