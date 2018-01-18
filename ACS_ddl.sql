@@ -1711,3 +1711,13 @@ commit;
 INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
 VALUES('OR-0009','الرجاء مراجعة الطلبية ،المجموع الكلي لا يساوي مجموع الطلبات','S','Please Check The Order , The Total''s Are Not Equal');
 commit;
+ALTER TABLE BILL_ISSUE_DETAIL 
+ ADD (
+  ITEM_I_DISCOUNT NUMBER (5, 2)
+ )
+/
+
+
+INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
+VALUES('IF-0019','نسبة التخفيض لا يمكن أن تتعدى 100% و لا يمكن أن تكون أقل من صفر','I','The Discount Offer Can''t Be More Than 100% Or Less Than 0%');
+COMMIT;
