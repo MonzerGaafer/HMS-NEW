@@ -1721,3 +1721,13 @@ ALTER TABLE BILL_ISSUE_DETAIL
 INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
 VALUES('IF-0019','نسبة التخفيض لا يمكن أن تتعدى 100% و لا يمكن أن تكون أقل من صفر','I','The Discount Offer Can''t Be More Than 100% Or Less Than 0%');
 COMMIT;
+
+ALTER TABLE ACTORS 
+ MODIFY (
+  ACTOR_C_TYPE VARCHAR2 (15)
+
+ )
+/
+INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
+VALUES('OR-0010','المنتج مضاف مسبقا في الطلبية','S','Item Already Exsist In This Order');
+commit;
