@@ -1730,4 +1730,26 @@ ALTER TABLE ACTORS
 /
 INSERT INTO user_messages (MSG_C_ID,MSG_C_DESC,MSG_C_SEVERITY,MSG_C_FOREIGN)
 VALUES('OR-0010','المنتج مضاف مسبقا في الطلبية','S','Item Already Exsist In This Order');
+/
+ALTER TABLE ACTORS 
+ MODIFY (
+  ACTOR_C_TYPE VARCHAR2 (15)
+
+ )
+/
+
+ALTER TABLE ACTORS 
+ modify (
+  ACTOR_AGE number (3)
+
+ )
+/
+
+ALTER TABLE ACTORS 
+ add (
+  ACTOR_gender VARCHAR2 (10)
+
+ )
+/
+
 commit;
